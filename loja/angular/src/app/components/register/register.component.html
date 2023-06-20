@@ -1,0 +1,113 @@
+<div class="hold-transition register-page">
+  <div class="register-box">
+    <div class="card">
+      <div class="card-body register-card-body">
+        <div class="register-logo">
+          <a href="/"><b>Login do cliente</b></a>
+        </div>
+        <p class="login-box-msg">Criar seu cadastro</p>
+
+        <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nome Completo" name="name" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.name">{{errors.name}}</p>
+
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" name="email" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.email">{{errors.email}}</p>
+
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Senha" name="password" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.password">{{errors.password}}</p>
+
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Confirmar senha" name="password_confirmation" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Endereco" name="endereco" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.endereco">{{errors.endereco}}</p>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Bairro" name="bairro" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.bairro">{{errors.bairro}}</p>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Cidade" name="cidade" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.cidade">{{errors.cidade}}</p>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="UF" name="uf" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.uf">{{errors.uf}}</p>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Cep" name="cep" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.cep">{{errors.cep}}</p>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Telefone" name="telefone" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <p class="text-danger pl-1" *ngIf="errors.uf">{{errors.telefone}}</p>
+
+          <div class="row">
+            <div class="col-12">
+              <button type="submit" class="btn btn-danger btn-block">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

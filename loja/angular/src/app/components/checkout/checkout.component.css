@@ -1,0 +1,29 @@
+.card {
+    padding: 10px;
+    flex: 0 1 1024px;
+    background-color: white;
+  }
+  .buy-button {
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    transition: .3s all;
+  }
+  
+  .buy-button:hover {
+    filter: brightness(0.9);
+  }
+
+  li {
+    padding: 10px;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: hidden;
+    margin: 10px 0;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+  }

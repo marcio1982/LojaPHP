@@ -1,0 +1,159 @@
+<div class="container">
+  
+    <div class="d-flex justify-content-between">
+      <h4>Editar produto</h4>
+      <a href="#" routerLink="/produto/index" class="btn btn-primaryt">Voltar</a>
+    </div>
+
+    <hr>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Titulo:</label>
+              <input
+                formControlName="titulo"
+                [(ngModel)]="produto.titulo"
+                id="titulo"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.titulo.touched && f.titulo.invalid" class="alert alert-danger">
+                  <div *ngIf="f.titulo.errors!.required">*Titulo obrigatório.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="descricao">Descrição:</label>
+              <textarea  formControlName="descricao"
+                        [(ngModel)]="produto.descricao"
+                        id="descricao"
+                        type="text"
+                        class="form-control">
+              </textarea>
+              <div *ngIf="f.descricao.touched && f.descricao.invalid" class="alert alert-danger">
+                  <div *ngIf="f.descricao.errors!.required">*Descrição obrigatório.</div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6 ">
+            <label for="imagens">File</label>
+            <input 
+                formControlName="imagens"
+                [(ngModel)]="produto.imagens"
+                id="imagens" 
+                type="file" 
+                class="form-control"
+                (change)="onFileChange($event)">
+          </div>
+        </div>
+        <div class="product-image__container">
+          <img [src]="imageSrc" style="height: 300px; width:500px; object-fit: contain;">
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="preco">Preço:</label>
+              <input
+                [(ngModel)]="produto.preco"
+                formControlName="preco"
+                id="preco"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.preco.touched && f.preco.invalid" class="alert alert-danger">
+                  <div *ngIf="f.preco.errors!.required">*Preço obrigatório.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="precoPromocional">Preço Promocional:</label>
+            <input
+              [(ngModel)]="produto.precoPromocional"
+              id="precoPromocional"
+              type="text"
+              class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="estoque">Estoque:</label>
+            <input
+              [(ngModel)]="produto.estoque"
+              formControlName="estoque"
+              id="estoque"
+              type="text"
+              class="form-control">
+              <div *ngIf="f.estoque.touched && f.estoque.invalid" class="alert alert-danger">
+                <div *ngIf="f.estoque.errors!.required">*Estoque obrigatório.</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="altura">Altura:</label>
+            <input
+              [(ngModel)]="produto.altura"
+              formControlName="altura"
+              id="altura"
+              type="text"
+              class="form-control">
+              <div *ngIf="f.altura.touched && f.altura.invalid" class="alert alert-danger">
+                <div *ngIf="f.altura.errors!.required">*Altura obrigatório.</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="largura">Largura:</label>
+            <input
+              [(ngModel)]="produto.largura"
+              formControlName="largura"
+              id="largura"
+              type="text"
+              class="form-control">
+              <div *ngIf="f.largura.touched && f.largura.invalid" class="alert alert-danger">
+                <div *ngIf="f.largura.errors!.required">*Largura obrigatório.</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-6 ">
+            <label for="comprimento">Comprimento:</label>
+            <input
+              [(ngModel)]="produto.comprimento"
+              formControlName="comprimento"
+              id="comprimento"
+              type="text"
+              class="form-control">
+              <div *ngIf="f.comprimento.touched && f.comprimento.invalid" class="alert alert-danger">
+                <div *ngIf="f.comprimento.errors!.required">*Comprimento obrigatório.</div>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="peso">Peso:</label>
+              <input
+                [(ngModel)]="produto.peso"
+                formControlName="peso"
+                id="peso"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.peso.touched && f.peso.invalid" class="alert alert-danger">
+                  <div *ngIf="f.peso.errors!.required">*Peso obrigatório.</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Alterar</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<h1 class="cart-title">Carrinho</h1>
+<div *ngIf="itensCarrinho.length > 0; else semProduto">
+  <ul>
+    <li *ngFor="let itemCarrinho of itensCarrinho">
+      <img [src]="itemCarrinho.imagens">
+      <p style="width: 30%;"> {{itemCarrinho.titulo}}</p>
+      <p>Preço: {{itemCarrinho.preco | currency: 'BRL'}}</p>
+      <label>
+        Quantidade:
+        <input type="number" style="width: 55px;" [(ngModel)]= "itemCarrinho.quantidade" (change)= "calcularTotal(); atualizaCarrinho(itensCarrinho)">
+      </label>
+      <button class="remove-button" (click)="removeProdutoCarrinho(itemCarrinho.id)"><i class="fa-solid fa-xmark"></i></button>
+    </li>
+  </ul>
+  <h2 class="cart-total">Total: {{total | currency: 'BRL'}}</h2>
+ 
+    <div class="col-md-3">
+        <form>
+            <div class="input-group mb-3">
+              <label for="cep">Informe o CEP:</label>
+              <input class="form-control" name="cep" id="cep" type="number" [(ngModel)]="cep">
+              <button type="submit" id="buttonOkCep" (click)="calcularFrete(cep)" >OK</button>
+            </div>      
+        </form>
+        <p>{{retornoCep}}</p>
+    </div>
+  <button class="buy-button" (click)="comprar()">Comprar</button>
+</div>
+<ng-template #semProduto>Nenhum produto foi adicionado ao carrinho</ng-template>
+<button *ngIf="itensCarrinho.length == 0" class="btn btn-primary btn-sm" routerLink="../home">Voltar</button>

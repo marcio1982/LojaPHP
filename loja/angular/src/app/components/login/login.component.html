@@ -1,0 +1,44 @@
+<div class="hold-transition login-page">
+  <div class="login-box">
+    <div class="card">
+      <div class="card-body login-card-body">
+        <div class="login-logo">
+          <span class="glyphicon glyphicon-envelope"></span><b>Login do cliente</b>
+        </div>
+        <p class="login-box-msg">Veja seus pedidos de forma fácil, compre mais rápido e tenha uma experiência personalizada :)</p>
+
+        <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email" name="email" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Senha" name="password" ngModel>
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <p class="mb-1">
+            <a routerLink="/forgot-password">Esqueci minha senha</a>
+          </p>
+          <div class="row">
+            <div class="col-12">
+              <button type="submit" class="btn btn-danger btn-block">Continuar</button>
+            </div>
+          </div>
+        </form>       
+        <p class="mb-0">
+          Não tem cadastro? <a routerLink="/register" class="text-center"><button type="button" class="btn btn-danger btn-block">Cadastre-se</button></a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+</div>

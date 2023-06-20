@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="d-flex justify-content-between">
+      <h4>Form produto</h4>
+      <a href="#" routerLink="/produto/index" class="btn btn-primaryt">Voltar</a>
+    </div>
+  
+    <hr/>
+  
+      <form [formGroup]="form" (ngSubmit)="submit()">
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="title">Titulo:</label>
+                <input
+                  formControlName="titulo"
+                  id="titulo"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.titulo.touched && f.titulo.invalid" class="alert alert-danger">
+                    <div *ngIf="f.titulo.errors!.required">*Titulo é obrigatório.</div>
+                    <div *ngIf="f.titulo.errors!.pattern">*The titulo must only contain letters.</div>
+                </div>
+              </div>
+          </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="descricao">Descrição:</label>
+                <textarea formControlName="descricao"
+                          id="descricao"
+                          type="text"
+                          class="form-control">
+                </textarea>
+                <div *ngIf="f.descricao.touched && f.descricao.invalid" class="alert alert-danger">
+                    <div *ngIf="f.descricao.errors!.required">*Descrição é obrigatório.</div>
+                </div>
+              </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="imagens">Imagens:</label>
+              <input  (change)="onFileChange($event)"  id="file" type="file"  class="form-control">      
+            </div>
+          </div>
+          <img [src]="imageSrc" *ngIf="imageSrc" style="height: 300px; width:500px">
+      
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="preco">Preço:</label>
+                <input
+                  formControlName="preco"
+                  id="preco"
+                  type="text"
+                  class="form-control">
+                <div *ngIf="f.preco.touched && f.preco.invalid" class="alert alert-danger">
+                    <div *ngIf="f.preco.errors!.required">*Preço é obrigatório.</div>
+                </div>
+              </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="precoPromocional">Preço Promocional:</label>
+              <input
+                formControlName="precoPromocional"
+                id="precoPromocional"
+                type="text"
+                class="form-control">
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="estoque">Estoque:</label>
+              <input
+                formControlName="estoque"
+                id="estoque"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.estoque.touched && f.estoque.invalid" class="alert alert-danger">
+                  <div *ngIf="f.estoque.errors!.required">*Estoque is required.</div>
+                </div>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="altura">Altura:</label>
+              <input
+                formControlName="altura"
+                id="altura"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.altura.touched && f.altura.invalid" class="alert alert-danger">
+                  <div *ngIf="f.altura.errors!.required">*Altura is required.</div>
+                </div>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="largura">Largura:</label>
+              <input
+                formControlName="largura"
+                id="largura"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.largura.touched && f.largura.invalid" class="alert alert-danger">
+                  <div *ngIf="f.largura.errors!.required">*Largura is required.</div>
+                </div>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="comprimento">Comprimento:</label>
+              <input
+                formControlName="comprimento"
+                id="comprimento"
+                type="text"
+                class="form-control">
+                <div *ngIf="f.comprimento.touched && f.comprimento.invalid" class="alert alert-danger">
+                  <div *ngIf="f.comprimento.errors!.required">*Comprimento is required.</div>
+                </div>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+              <div class="col-md-6 ">
+                <label for="peso">Peso:</label>
+                <input
+                  formControlName="peso"
+                  id="peso"
+                  type="text"
+                  class="form-control">
+                  <div *ngIf="f.peso.touched && f.peso.invalid" class="alert alert-danger">
+                    <div *ngIf="f.peso.errors!.required">*Peso is required.</div>
+                  </div>
+              </div>
+          </div>
+  
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Gravar</button>
+      </form>
+  </div>
+  

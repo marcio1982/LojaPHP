@@ -1,0 +1,40 @@
+<div class="container" *ngIf="itensCarrinho.length > 0">
+  <div class="d-flex justify-content-center mt-12" *ngIf="user">
+    <div class="card">
+      
+      <h5 class="card-header">Endereco de Entrega</h5>
+      <div class="card-body">
+        <p class="card-text">Nome:{{user.name}}</p>
+        <p class="card-text">Endereço: {{user.endereco}}</p>
+        <p class="card-text">Bairro: {{user.bairro}}</p>
+        <p class="card-text">Cidade: {{user.cidade}} -  {{user.uf}}</p>
+        <p class="card-text">Telefone: {{user.telefone}}</p>
+        <p class="card-text">Email: {{user.email}}</p>
+      </div>
+      <h5 class="card-header">Itens do carrinho</h5>
+      <div class="card-body">
+        <div *ngIf="itensCarrinho.length > 0; else semProduto">
+          <ul>
+            <li *ngFor="let itemCarrinho of itensCarrinho">
+              <p class="card-text" style="font-weight: bold">Produto</p> 
+              <p class="card-text" style="width: 30%;"> {{itemCarrinho.titulo}}</p>
+              <p class="card-text">Preço: {{itemCarrinho.preco | currency: 'BRL'}}</p>
+              <p class="card-text">Quantidade: {{itemCarrinho.quantidade}}</p>
+            </li>
+          </ul>
+          <h2 class="cart-total">Total: {{total | currency: 'BRL'}}</h2>
+        </div>
+        <ng-template #semProduto>Nenhum produto foi adicionado ao carrinho</ng-template>
+      </div>
+      <h5 class="card-header">Pagamento</h5>
+      <div class="card-body">
+        <select>
+          <option>Boleto</option>
+          <option>Cartão de Crédito</option>
+          <option>Pagar na Entrega</option>
+        </select>
+      </div>
+      <button class="buy-button" (click)="finalizarPedido()">Finalizar Pedido</button>
+    </div>
+  </div>
+</div>
