@@ -12,3 +12,4 @@ Projeto em angula (front-end) e Laravel (backend).
 4. Executar php artisan key:generate e executar o backend - php artisan server
 5. Caso precisar rodar o comando abaixo para login do usuário
 php artisan passport:client --personal
+6. Recuperar banco de dados em postgres. dump-lojateste-202306192249
